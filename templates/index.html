@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Busca CEP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Busca de Endereço</h1>
+            <p>Insira o CEP para obter os dados</p>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="text" id="cep-input" placeholder="00000-000" maxlength="9">
+                <button id="search-btn">
+                    <span>Consultar</span>
+                    <div class="loader" id="loader"></div>
+                </button>
+            </div>
+
+            <div id="error-message" class="error-message hidden"></div>
+
+            <div id="result-container" class="result-container hidden">
+                <div class="result-card">
+                    <div class="result-header">
+                        <span class="badge" id="source-badge">DB LOCAL</span>
+                        <h2 id="res-cep">00000-000</h2>
+                    </div>
+                    <div class="result-body">
+                        <div class="info-group">
+                            <label>Logradouro</label>
+                            <p id="res-street">-</p>
+                        </div>
+                        <div class="info-group">
+                            <label>Bairro</label>
+                            <p id="res-neighborhood">-</p>
+                        </div>
+
+                        <div class="grid-2">
+                            <div class="info-group">
+                                <label>Cidade</label>
+                                <p id="res-city">-</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Estado(UF)</label>
+                                <p id="res-state">-</p>
+                            </div>
+                        </div>
+                        <div class="grid-2">
+                            <div class="info-group">
+                                <label>Complemento</label>
+                                <p id="res-complement">-</p>
+                            </div>
+                            <div class="info-group">
+                                <label>IBGE</label>
+                                <p id="res-ibge">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>I3DEV - Programação Backend</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
